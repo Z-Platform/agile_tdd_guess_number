@@ -20,4 +20,9 @@ public class GuessNumberExceptionTest {
         this.guessNumber.guess("1123");
     }
 
+    @Test(expected = IllegalFormatException.class)
+    public void test_guess_should_throws_IllegalFormatException_when_input_nonnumeric() {
+        this.guessNumber.guess("abcd");
+    }
+
 }
