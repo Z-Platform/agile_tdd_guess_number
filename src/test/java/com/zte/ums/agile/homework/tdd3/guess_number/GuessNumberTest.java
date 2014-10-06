@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+// 这个类叫GuessNunberBatchTest比较合适
+// 为了便于git跟踪历史，这里不重名这个类了，另起一个GuessNumberSingleTest
 @RunWith(Parameterized.class)
 public class GuessNumberTest {
     private GuessNumber guessNumber;
