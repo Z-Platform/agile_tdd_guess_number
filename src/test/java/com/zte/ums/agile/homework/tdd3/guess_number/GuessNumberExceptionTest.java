@@ -25,4 +25,9 @@ public class GuessNumberExceptionTest {
         this.guessNumber.guess("abcd");
     }
 
+    @Test(expected = IllegalFormatException.class)
+    public void test_guess_should_throws_IllegalFormatException_when_input_null() {
+        this.guessNumber.guess(null);
+    }
+
 }

@@ -20,6 +20,9 @@ public class GuessNumber {
     }
 
     private void valid(String input) {
+        if (input == null) {
+            throw new UnknownFormatConversionException("输入不正确，请重新输入");
+        }
         if (input.matches("[0-9]{4}") == false) {
             throw new UnknownFormatConversionException("输入不正确，请重新输入");
         }
