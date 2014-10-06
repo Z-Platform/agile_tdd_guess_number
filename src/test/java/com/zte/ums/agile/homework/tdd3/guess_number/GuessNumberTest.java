@@ -23,4 +23,28 @@ public class GuessNumberTest {
         assertThat(result, is("0A1B"));
     }
 
+    @Test
+    public void test_should_return_0A2B_when_0A2B() {
+        GuessNumber guessNumber =  new GuessNumber();
+        String result = guessNumber.guess("9834");
+
+        assertThat(result, is("0A2B"));
+    }
+
+    @Test
+    public void test_should_return_0A3B_when_0A3B() {
+        GuessNumber guessNumber =  new GuessNumber();
+        String result = guessNumber.guess("9874");
+
+        assertThat(result, is("0A3B"));
+    }
+
+    @Test
+    public void test_should_return_0A4B_when_0A4B() {
+        GuessNumber guessNumber =  new GuessNumber();
+        String result = guessNumber.guess("9876");
+
+        assertThat(result, is("0A4B"));
+    }
+
 }
