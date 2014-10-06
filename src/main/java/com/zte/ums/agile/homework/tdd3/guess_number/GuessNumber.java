@@ -9,6 +9,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 public class GuessNumber {
+    private static final String REGEX = "[0-9]{4}";
+    private static final String INVAILD_INPUT_TIPS = "输入不正确，请重新输入";
 
     public String guess(String input) {
         valid(input);
@@ -21,14 +23,14 @@ public class GuessNumber {
 
     private void valid(String input) {
         if (input == null) {
-            throw new UnknownFormatConversionException("输入不正确，请重新输入");
+            throw new UnknownFormatConversionException(INVAILD_INPUT_TIPS);
         }
-        if (input.matches("[0-9]{4}") == false) {
-            throw new UnknownFormatConversionException("输入不正确，请重新输入");
+        if (input.matches(REGEX) == false) {
+            throw new UnknownFormatConversionException(INVAILD_INPUT_TIPS);
         }
         Set<String> inputSet = convertInputString2Set(input);
         if (inputSet.size() != 4) {
-            throw new UnknownFormatConversionException("输入不正确，请重新输入");
+            throw new UnknownFormatConversionException(INVAILD_INPUT_TIPS);
         }
     }
 
