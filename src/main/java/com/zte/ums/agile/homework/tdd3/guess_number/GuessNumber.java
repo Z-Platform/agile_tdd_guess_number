@@ -12,15 +12,8 @@ public class GuessNumber {
     public String guess(String input) {
         List<String> bingoNumberList = start();
         int countB = countB(input, bingoNumberList);
-        int countA = 0;
-        for (int i = 0; i < bingoNumberList.size(); i++) {
-            String bingoOne = bingoNumberList.get(i);
-            String inputOnt = String.valueOf(input.charAt(i));
-            if (inputOnt.equals(bingoOne)) {
-                countA++;
-            }
-        }
-        return countA+ "A" + (countB-countA) + "B";
+        int countA = countA(input, bingoNumberList);
+        return printResult(countB, countA);
     }
 
     private int countB(String input, List<String> bingoNumberList) {
@@ -36,6 +29,22 @@ public class GuessNumber {
         }
         int BCount = 4 - inputSet.size();
         return BCount;
+    }
+    
+    private int countA(String input, List<String> bingoNumberList) {
+        int countA = 0;
+        for (int i = 0; i < bingoNumberList.size(); i++) {
+            String bingoOne = bingoNumberList.get(i);
+            String inputOnt = String.valueOf(input.charAt(i));
+            if (inputOnt.equals(bingoOne)) {
+                countA++;
+            }
+        }
+        return countA;
+    }
+    
+    private String printResult(int countB, int countA) {
+        return countA+ "A" + (countB-countA) + "B";
     }
 
     private List<String> start() {
