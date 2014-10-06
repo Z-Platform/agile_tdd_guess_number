@@ -1,50 +1,46 @@
 package com.zte.ums.agile.homework.tdd3.guess_number;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
+import java.util.Arrays;
+
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
+@RunWith(Parameterized.class)
 public class GuessNumberTest {
+    private GuessNumber guessNumber;
+    private String input;
+    private String result;
 
-    @Test
-    public void test_should_return_0A0B_when_0A0B() {
-        GuessNumber guessNumber =  new GuessNumber();
-        String result = guessNumber.guess("1234");
+    public GuessNumberTest(String input, String result) {
+        this.input = input;
+        this.result = result;
+    }
 
-        assertThat(result, is("0A0B"));
+    @Parameters(name = "{index}: The input number is \"{0}\" and  the bingo number is \"6789\". The result is \"{1}\".")
+    public static Iterable<Object[]> cases() {
+        return Arrays.asList(new Object[][]{
+                {"1234","0A0B"},
+                {"9234","0A1B"},
+                {"9834","0A2B"},
+                {"9874","0A3B"},
+                {"9876","0A4B"}
+        });
+    }
+
+    @Before
+    public void setUp() {
+        this.guessNumber =  new GuessNumber();
     }
 
     @Test
-    public void test_should_return_0A1B_when_0A1B() {
-        GuessNumber guessNumber =  new GuessNumber();
-        String result = guessNumber.guess("9234");
-
-        assertThat(result, is("0A1B"));
-    }
-
-    @Test
-    public void test_should_return_0A2B_when_0A2B() {
-        GuessNumber guessNumber =  new GuessNumber();
-        String result = guessNumber.guess("9834");
-
-        assertThat(result, is("0A2B"));
-    }
-
-    @Test
-    public void test_should_return_0A3B_when_0A3B() {
-        GuessNumber guessNumber =  new GuessNumber();
-        String result = guessNumber.guess("9874");
-
-        assertThat(result, is("0A3B"));
-    }
-
-    @Test
-    public void test_should_return_0A4B_when_0A4B() {
-        GuessNumber guessNumber =  new GuessNumber();
-        String result = guessNumber.guess("9876");
-
-        assertThat(result, is("0A4B"));
+    public void test_guess() {
+        assertThat(this.guessNumber.guess(input), is(this.result));
     }
 
 }
