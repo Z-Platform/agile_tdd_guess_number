@@ -11,11 +11,19 @@ public class GuessNumber {
 
     public String guess(String input) {
         List<String> bingoNumberList = start();
-        int BCount = judgeBCount(input, bingoNumberList);
-        return "0A" + BCount + "B";
+        int countB = countB(input, bingoNumberList);
+        int countA = 0;
+        for (int i = 0; i < bingoNumberList.size(); i++) {
+            String bingoOne = bingoNumberList.get(i);
+            String inputOnt = String.valueOf(input.charAt(i));
+            if (inputOnt.equals(bingoOne)) {
+                countA++;
+            }
+        }
+        return countA+ "A" + (countB-countA) + "B";
     }
 
-    private int judgeBCount(String input, List<String> bingoNumberList) {
+    private int countB(String input, List<String> bingoNumberList) {
         Set<String> inputSet = Sets.newHashSet();
         for (int i = 0; i < input.length(); i++) {
             inputSet.add(String.valueOf(input.charAt(i)));
