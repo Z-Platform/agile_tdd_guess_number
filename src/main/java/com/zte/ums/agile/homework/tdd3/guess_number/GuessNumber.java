@@ -11,14 +11,7 @@ import com.google.common.collect.Sets;
 public class GuessNumber {
 
     public String guess(String input) {
-
-        Set<String> inputSet = Sets.newHashSet();
-        for (int i = 0; i < input.length(); i++) {
-            inputSet.add(String.valueOf(input.charAt(i)));
-        }
-        if (inputSet.size() != 4) {
-            throw new UnknownFormatConversionException(input);
-        }
+        valid(input);
 
         List<String> bingoNumberList = start();
         int countB = countB(input, bingoNumberList);
@@ -26,11 +19,23 @@ public class GuessNumber {
         return printResult(countB, countA);
     }
 
-    private int countB(String input, List<String> bingoNumberList) {
+    private void valid(String input) {
+        Set<String> inputSet = convertInputString2Set(input);
+        if (inputSet.size() != 4) {
+            throw new UnknownFormatConversionException(input);
+        }
+    }
+
+    private Set<String> convertInputString2Set(String input) {
         Set<String> inputSet = Sets.newHashSet();
         for (int i = 0; i < input.length(); i++) {
             inputSet.add(String.valueOf(input.charAt(i)));
         }
+        return inputSet;
+    }
+
+    private int countB(String input, List<String> bingoNumberList) {
+        Set<String> inputSet = convertInputString2Set(input);
         for (Iterator<String> iterator = inputSet.iterator(); iterator.hasNext();) {
             String intputOne = iterator.next();
             if (bingoNumberList.contains(intputOne)) {
