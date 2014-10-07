@@ -5,8 +5,11 @@ import static org.junit.Assert.*;
 import java.util.IllegalFormatException;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
+@Deprecated
 public class GuessNumberExceptionTest {
     private GuessNumber guessNumber;
 
