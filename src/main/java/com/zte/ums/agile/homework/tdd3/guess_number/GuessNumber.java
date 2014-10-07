@@ -12,11 +12,11 @@ import com.google.common.collect.Sets;
 public class GuessNumber {
     private static final String REGEX = "[0-9]{4}";
     private static final String INVAILD_INPUT_TIPS = "输入不正确，请重新输入";
+    private List<String> bingoNumberList;
 
     public String guess(String input) {
         valid(input);
 
-        List<String> bingoNumberList = start();
         int countB = countB(input, bingoNumberList);
         int countA = countA(input, bingoNumberList);
         return printResult(countB, countA);
@@ -71,13 +71,8 @@ public class GuessNumber {
         return countA+ "A" + (countB-countA) + "B";
     }
 
-    private List<String> start() {
-        List<String> bingoNumberList = Lists.newArrayList();
-        bingoNumberList.add("6");
-        bingoNumberList.add("7");
-        bingoNumberList.add("8");
-        bingoNumberList.add("9");
-        return bingoNumberList;
+    public void start() {
+        bingoNumberList = generateBingoNumber();
     }
 
     private List<String> generateBingoNumber() {
