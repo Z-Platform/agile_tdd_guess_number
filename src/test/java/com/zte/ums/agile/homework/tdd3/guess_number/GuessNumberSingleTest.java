@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.base.Objects;
@@ -38,6 +39,10 @@ public class GuessNumberSingleTest {
         }
     }
 
+    /**
+     * It is not necessary to test a random method.
+     */
+    @Ignore
     @Test
     public void test_generate_bingoNumber_should_return_difference_number_when_generate_twice() {
         Class class1 = this.guessNumber.getClass();
