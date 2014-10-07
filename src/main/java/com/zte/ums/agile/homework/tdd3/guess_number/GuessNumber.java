@@ -80,7 +80,7 @@ public class GuessNumber {
         return bingoNumberList;
     }
 
-    public List<String> generateBingoNumber() {
+    private List<String> generateBingoNumber() {
         Random random = new Random(System.currentTimeMillis());
         List<String> bingoNumberList = Lists.newArrayList();
         while (bingoNumberList.size() != 4) {
