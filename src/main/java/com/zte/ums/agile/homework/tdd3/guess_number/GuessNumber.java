@@ -2,6 +2,7 @@ package com.zte.ums.agile.homework.tdd3.guess_number;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.UnknownFormatConversionException;
 
@@ -76,6 +77,18 @@ public class GuessNumber {
         bingoNumberList.add("7");
         bingoNumberList.add("8");
         bingoNumberList.add("9");
+        return bingoNumberList;
+    }
+
+    public List<String> generateBingoNumber() {
+        Random random = new Random(System.currentTimeMillis());
+        List<String> bingoNumberList = Lists.newArrayList();
+        while (bingoNumberList.size() != 4) {
+            String bingoNumberOne = String.valueOf(Math.abs(random.nextInt() % 10));
+            if (bingoNumberList.contains(bingoNumberOne) == false) {
+                bingoNumberList.add(bingoNumberOne);
+            }
+        }
         return bingoNumberList;
     }
 }
