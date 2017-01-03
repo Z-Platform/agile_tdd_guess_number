@@ -5,7 +5,7 @@ jdk:
 deploy:
   provider: releases
   api_key:
-    secure: 766d1a9bc945aff484b3244381936661fb99f930
+    secure: c4ba3341e3d15fb07e8378411328800dbc27e390
   file: /home/travis/build/luorigufeng/agile_tdd_guess_number/target/guess_number-0.1.0-SNAPSHOT.jar
   skip_cleanup: true
   on:
