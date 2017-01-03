@@ -9,4 +9,4 @@ deploy:
   file: /home/travis/build/luorigufeng/agile_tdd_guess_number/target/guess_number-0.1.0-SNAPSHOT.jar
   skip_cleanup: true
   on:
-    tags: true
+    all_branches: true
