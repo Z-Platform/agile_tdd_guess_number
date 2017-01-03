@@ -6,6 +6,6 @@ deploy:
   provider: releases
   api_key:
     secure: MEyOVdzimm6ZFgAck2/XpWOSbS6a2PbnkqTEtnYqBwKbPzKt2w/pFFaqglH5lJumRJ05BB12/5148VPTJpnpFaPy6ZRtGoSSlf6uHOYYvHDnGr4zmiD3gwi+Ap5ZUIKuvGMk1nOunFCVvnG1hJIlUw9VTXzbV0IDsP5v9hAMtr5w03cqrcCta1I5EkwjdGE7SNEQwj/iBwOOnNmJQVGHPK64n99IoZJILUQ7O881qbOb1RUTVRWkYCAWsw57DQ6k4DNHUZGmdoL5wWR1Fxlzxc+iygchBr7HykUaWu1iOrxiE8Hxs/TnU+H7tbIKdA7YTH7VGY9am7GQTVkmNqFwrczJjegwku/YguiaH/fAKcF6JRMbaBmuhGRf1qRL2yRN+l9Aet9ny0mi4CoxviOXq+0kylOAtuKSAxsqi++np9B21dQIY874FiHteEm6ivjnGV0qrJdIP2XZQQn27x/mlSfiX8DigMX4+pttbEYMzEy20HQ1HNUA0TK5nWleBslx39N4oQ9cc/gactWvigiecjX/Pz5QXzC2/7plzmlEoFnU/ezxDrTiKV2azmDepa16ZizeE0DyxfIwax4IYMR8XIVkpmKKtaw1sS3EN4JLIIgtdrfa/Zhq4hLGCNRKtLdWzIFwibx8VE/NyrAyzASUoOVITxKeeVt6NmBFtedVrTY=
-  file: /home/travis/build/luorigufeng/agile_tdd_guess_number/target/guess_number-0.1.0-SNAPSHOT.jar
+  file: target/guess_number-0.1.0-SNAPSHOT.jar
   on:
     repo: luorigufeng/agile_tdd_guess_number
