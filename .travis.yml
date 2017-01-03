@@ -2,3 +2,11 @@ language: java
 script: mvn clean verify
 jdk:
   - oraclejdk8
+deploy:
+  provider: releases
+  user: zxj_best@163.com
+  password: test123
+  file: /home/travis/build/luorigufeng/agile_tdd_guess_number/target/guess_number-0.1.0-SNAPSHOT.jar
+  skip_cleanup: true
+  on:
+    tags: true
