@@ -4,8 +4,8 @@ jdk:
   - oraclejdk8
 deploy:
   provider: releases
-  user: "zxj_best@163.com"
-  password: "test123"
+  api_key:
+    secure: 8f05297027b4d0230e5f06163d20be5b6481b188
   file: /home/travis/build/luorigufeng/agile_tdd_guess_number/target/guess_number-0.1.0-SNAPSHOT.jar
   skip_cleanup: true
   on:
